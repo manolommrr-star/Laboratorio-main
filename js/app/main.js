@@ -2455,7 +2455,7 @@ function manejarClicsGlobales(evento) {
                     );
                     if (!confirmado) return;
                 }
-                orden = cambiarEstadoOrden(orden, ESTADOS_ORDEN.ENTREGADA);
+                cambiarEstadoOrden(orden, ESTADOS_ORDEN.ENTREGADA);
                 orden.historial = orden.historial || { eventos: [] };
                 orden.historial.ultimaAccion = "entregada";
                 orden.historial.eventos.push({

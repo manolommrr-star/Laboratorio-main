@@ -5,6 +5,23 @@
  */
 
 /**
+ * Cambia el estado de una orden y actualiza su marca de tiempo.
+ * Muta el objeto recibido y lo devuelve para encadenar otras operaciones.
+ * @param {object} orden - La orden cuyo estado se desea cambiar.
+ * @param {string} nuevoEstado - Nuevo estado (ver ESTADOS_ORDEN).
+ * @returns {object} La misma orden con el estado y updatedAt actualizados.
+ */
+function cambiarEstadoOrden(orden, nuevoEstado) {
+    if (!orden || typeof orden !== "object") return orden;
+
+    const estado = normalizarEstadoOrden(nuevoEstado);
+    orden.estado = estado;
+    orden.updatedAt = new Date().toISOString();
+
+    return orden;
+}
+
+/**
  * Genera el código HTML para una tarjeta de orden.
  * La tarjeta muestra información clave como el folio, paciente, estudios y estado del pago.
  * También incluye botones de acción ('Capturar', 'Imprimir', 'Editar') según el estado de la orden.
@@ -23,7 +40,7 @@ function crearTarjetaOrden(orden) {
     const tiempo = ordenSegura.fecha ? new Date(ordenSegura.fecha).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' }) : "Sin hora";
     const estado = normalizarEstadoOrden(ordenSegura.estado);
     const folio = ordenSegura.folio || "Sin folio";
-    const saldo = Number(pago.saldo ?? 0);
+    const saldo = Number(pago.saldo ?? Math.max(0, (Number(pago.total ?? 0)) - (Number(pago.pagado ?? 0))));
 
     let botones = '';
 
