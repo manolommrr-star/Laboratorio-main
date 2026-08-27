@@ -1,0 +1,902 @@
+[
+  {
+    "id": 35,
+    "nombre": "COMBS DIRECTO",
+    "muestra": "Sangre Total",
+    "precioSugerido": 215
+  },
+  {
+    "id": 36,
+    "nombre": "FOSFATASA ALCALINA",
+    "muestra": "Suero",
+    "precioSugerido": 190
+  },
+  {
+    "id": 37,
+    "nombre": "GGT",
+    "muestra": "Suero",
+    "precioSugerido": 190
+  },
+  {
+    "id": 38,
+    "nombre": "DHL",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 39,
+    "nombre": "AMILASA",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 40,
+    "nombre": "LIPASA",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 41,
+    "nombre": "CPK",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 42,
+    "nombre": "CPK MB",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 43,
+    "nombre": "AMONIO",
+    "muestra": "Plasma",
+    "precioSugerido": 350
+  },
+  {
+    "id": 44,
+    "nombre": "ELECTROLITOS SERICOS 3",
+    "muestra": "Suero",
+    "precioSugerido": 350
+  },
+  {
+    "id": 45,
+    "nombre": "CALCIO",
+    "muestra": "Suero",
+    "precioSugerido": 190
+  },
+  {
+    "id": 46,
+    "nombre": "FOSFORO",
+    "muestra": "Suero",
+    "precioSugerido": 190
+  },
+  {
+    "id": 47,
+    "nombre": "MAGNESIO",
+    "muestra": "Suero",
+    "precioSugerido": 190
+  },
+  {
+    "id": 48,
+    "nombre": "ELECTROLITOS SERICOS 6",
+    "muestra": "Suero",
+    "precioSugerido": 570
+  },
+  {
+    "id": 49,
+    "nombre": "PROT EN ORINA DE 24 HRS",
+    "muestra": "Orina",
+    "precioSugerido": 290
+  },
+  {
+    "id": 50,
+    "nombre": "DEP DE CREATINU, ORINA/24 HRS",
+    "muestra": "Orina",
+    "precioSugerido": 390
+  },
+  {
+    "id": 51,
+    "nombre": "RELAC PROT/ CREAT AL AZAR",
+    "muestra": "Orina",
+    "precioSugerido": 370
+  },
+  {
+    "id": 52,
+    "nombre": "AZUCARES REDUCTORES",
+    "muestra": "Heces",
+    "precioSugerido": 160
+  },
+  {
+    "id": 53,
+    "nombre": "PERFIL HORMONAL COMPLETO",
+    "muestra": "Suero",
+    "precioSugerido": 4950
+  },
+  {
+    "id": 54,
+    "nombre": "CULTIVO DE EX VAGINAL",
+    "muestra": "Medio de Transporte",
+    "precioSugerido": 380
+  },
+  {
+    "id": 55,
+    "nombre": "UROCULTIVO",
+    "muestra": "Orina",
+    "precioSugerido": 380
+  },
+  {
+    "id": 56,
+    "nombre": "COPROCULTIVO",
+    "muestra": "Heces",
+    "precioSugerido": 380
+  },
+  {
+    "id": 57,
+    "nombre": "CULTIVO DE EX FARINGEO",
+    "muestra": "Medio de Transporte",
+    "precioSugerido": 380
+  },
+  {
+    "id": 58,
+    "nombre": "CULTIVO DE LESION",
+    "muestra": "Medio de Transporte",
+    "precioSugerido": 380
+  },
+  {
+    "id": 59,
+    "nombre": "CULTIVO DE PREPUCIO",
+    "muestra": "Medio de Transporte",
+    "precioSugerido": 380
+  },
+  {
+    "id": 60,
+    "nombre": "CULTIVO DE GLANDE",
+    "muestra": "Medio de Transporte",
+    "precioSugerido": 380
+  },
+  {
+    "id": 61,
+    "nombre": "CULTIVO DE HERIDA",
+    "muestra": "Medio de Transporte",
+    "precioSugerido": 380
+  },
+  {
+    "id": 62,
+    "nombre": "CULT DE LIQUIDO DE DIALISIS",
+    "muestra": "Liquido",
+    "precioSugerido": 380
+  },
+  {
+    "id": 63,
+    "nombre": "CULTIVO DE SEMEN",
+    "muestra": "Semen",
+    "precioSugerido": 380
+  },
+  {
+    "id": 64,
+    "nombre": "ESTRADIOL",
+    "muestra": "Suero",
+    "precioSugerido": 300
+  },
+  {
+    "id": 65,
+    "nombre": "TSH",
+    "muestra": "Suero",
+    "precioSugerido": 280
+  },
+  {
+    "id": 66,
+    "nombre": "FSH",
+    "muestra": "Suero",
+    "precioSugerido": 300
+  },
+  {
+    "id": 67,
+    "nombre": "LH",
+    "muestra": "Suero",
+    "precioSugerido": 315
+  },
+  {
+    "id": 68,
+    "nombre": "HOMA",
+    "muestra": "Suero",
+    "precioSugerido": 400
+  },
+  {
+    "id": 69,
+    "nombre": "INSULINA",
+    "muestra": "Suero",
+    "precioSugerido": 350
+  },
+  {
+    "id": 70,
+    "nombre": "ROSA DE BENGALA",
+    "muestra": "Suero",
+    "precioSugerido": 580
+  },
+  {
+    "id": 71,
+    "nombre": "TESTOTERONA T",
+    "muestra": "Suero",
+    "precioSugerido": 300
+  },
+  {
+    "id": 72,
+    "nombre": "IGE",
+    "muestra": "Suero",
+    "precioSugerido": 380
+  },
+  {
+    "id": 73,
+    "nombre": "MICRO ALBUM/ ORINA OCASIONAL",
+    "muestra": "Suero",
+    "precioSugerido": 450
+  },
+  {
+    "id": 74,
+    "nombre": "ACIDO FOLICO",
+    "muestra": "Suero",
+    "precioSugerido": 370
+  },
+  {
+    "id": 75,
+    "nombre": "ACIDO VALPROICO",
+    "muestra": "Suero",
+    "precioSugerido": 390
+  },
+  {
+    "id": 76,
+    "nombre": "ALFA FETOPROTEINAS (AFP)",
+    "muestra": "Suero",
+    "precioSugerido": 330
+  },
+  {
+    "id": 77,
+    "nombre": "AC. ANTI DNA",
+    "muestra": "Suero",
+    "precioSugerido": 450
+  },
+  {
+    "id": 78,
+    "nombre": "AC. ANTI DNA DOBLE CADENA",
+    "muestra": "Suero",
+    "precioSugerido": 450
+  },
+  {
+    "id": 79,
+    "nombre": "PERFIL AC. ANTI-ENA",
+    "muestra": "Suero",
+    "precioSugerido": 1170
+  },
+  {
+    "id": 80,
+    "nombre": "AC. ANTI SSA (RO)",
+    "muestra": "Suero",
+    "precioSugerido": 460
+  },
+  {
+    "id": 81,
+    "nombre": "AC. ANTI SSB (LA)",
+    "muestra": "Suero",
+    "precioSugerido": 460
+  },
+  {
+    "id": 82,
+    "nombre": "AC. ANTI SMITH (SM)",
+    "muestra": "Suero",
+    "precioSugerido": 480
+  },
+  {
+    "id": 83,
+    "nombre": "AC. ANTI HELICOBACTER IgG",
+    "muestra": "Suero",
+    "precioSugerido": 590
+  },
+  {
+    "id": 84,
+    "nombre": "AC. ANTI HELICOBACTER IgM",
+    "muestra": "Suero",
+    "precioSugerido": 590
+  },
+  {
+    "id": 85,
+    "nombre": "AC. ANTI-LKM- 1",
+    "muestra": "Suero",
+    "precioSugerido": 990
+  },
+  {
+    "id": 86,
+    "nombre": "AC. ANTIMICROSOMALES TOTALES",
+    "muestra": "Suero",
+    "precioSugerido": 295
+  },
+  {
+    "id": 87,
+    "nombre": "AC. ANTI MUSCULO LISO",
+    "muestra": "Suero",
+    "precioSugerido": 740
+  },
+  {
+    "id": 88,
+    "nombre": "AC. ANTINUCLEARES",
+    "muestra": "Suero",
+    "precioSugerido": 420
+  },
+  {
+    "id": 89,
+    "nombre": "AC. ANTINUCLEARES POR IFI",
+    "muestra": "Suero",
+    "precioSugerido": 940
+  },
+  {
+    "id": 90,
+    "nombre": "AC. ANTI- PEPTIDO CICLICO CITRULINADO",
+    "muestra": "Suero",
+    "precioSugerido": 620
+  },
+  {
+    "id": 91,
+    "nombre": "AC. ANTI RNA",
+    "muestra": "Suero",
+    "precioSugerido": 2120
+  },
+  {
+    "id": 92,
+    "nombre": "ANTIGENO CARCINOEMBRIONARIO (CEA)",
+    "muestra": "Suero",
+    "precioSugerido": 430
+  },
+  {
+    "id": 93,
+    "nombre": "ANTIGENO CA 15-3",
+    "muestra": "Suero",
+    "precioSugerido": 490
+  },
+  {
+    "id": 94,
+    "nombre": "ANTIGENO CA 19-9",
+    "muestra": "Suero",
+    "precioSugerido": 550
+  },
+  {
+    "id": 95,
+    "nombre": "ANTIGENO CA 21-1",
+    "muestra": "Suero",
+    "precioSugerido": 2510
+  },
+  {
+    "id": 96,
+    "nombre": "ANTIGENO CA 27-29",
+    "muestra": "Suero",
+    "precioSugerido": 1590
+  },
+  {
+    "id": 97,
+    "nombre": "ANTIGENO CA 72-4",
+    "muestra": "Suero",
+    "precioSugerido": 1120
+  },
+  {
+    "id": 98,
+    "nombre": "ANTIGENO CA 125",
+    "muestra": "Suero",
+    "precioSugerido": 560
+  },
+  {
+    "id": 99,
+    "nombre": "ANTIGENO PROSTATICO T Y L",
+    "muestra": "Suero",
+    "precioSugerido": 590
+  },
+  {
+    "id": 100,
+    "nombre": "AG PROSTATICO LIBRE",
+    "muestra": "Suero",
+    "precioSugerido": 360
+  },
+  {
+    "id": 101,
+    "nombre": "BACILOSCOPIA 1",
+    "muestra": "Esputo (Expectoración)",
+    "precioSugerido": 200
+  },
+  {
+    "id": 102,
+    "nombre": "BACILOSCOPIA 2",
+    "muestra": "Esputo (Expectoración)",
+    "precioSugerido": 285
+  },
+  {
+    "id": 103,
+    "nombre": "BACILOSCOPIA 3",
+    "muestra": "Esputo (Expectoración)",
+    "precioSugerido": 360
+  },
+  {
+    "id": 104,
+    "nombre": "CALCITONINA",
+    "muestra": "Suero",
+    "precioSugerido": 450
+  },
+  {
+    "id": 105,
+    "nombre": "CALPROTECTINA Y LACTOFERRINA",
+    "muestra": "Heces no líquida",
+    "precioSugerido": 1640
+  },
+  {
+    "id": 106,
+    "nombre": "CARGA VIRAL HEPATITIS B (HBC CUANTI)",
+    "muestra": "Plasma congelado",
+    "precioSugerido": 5600
+  },
+  {
+    "id": 107,
+    "nombre": "CARGA VIRAL HEPATITIS C (HCV CUANTI)",
+    "muestra": "Plasma congelado",
+    "precioSugerido": 5600
+  },
+  {
+    "id": 108,
+    "nombre": "CARGA VIRAL HIV",
+    "muestra": "Sangre Total",
+    "precioSugerido": 4750
+  },
+  {
+    "id": 109,
+    "nombre": "CELULAS LE",
+    "muestra": "Sangre sin centrifugar/coagulante",
+    "precioSugerido": 210
+  },
+  {
+    "id": 110,
+    "nombre": "CITOQUIMICO DE LIQ PLEURAL",
+    "muestra": "Líquido pleural",
+    "precioSugerido": 520
+  },
+  {
+    "id": 111,
+    "nombre": "CITOQUIMICO DE LIQ DIALISIS",
+    "muestra": "Líquido de diálisis",
+    "precioSugerido": 520
+  },
+  {
+    "id": 112,
+    "nombre": "CITOQUIMICO DE LIQ ASCITIS/PERITONEAL",
+    "muestra": "Líquido ascitis/peritoneal",
+    "precioSugerido": 520
+  },
+  {
+    "id": 113,
+    "nombre": "CITOQUIMICO DE LIQ SINOVIAL",
+    "muestra": "Líquido sinovial",
+    "precioSugerido": 520
+  },
+  {
+    "id": 114,
+    "nombre": "CORTISOL MATUTINO",
+    "muestra": "Suero",
+    "precioSugerido": 305
+  },
+  {
+    "id": 115,
+    "nombre": "CREATIN FOSFOQUINASA (KM-MB)",
+    "muestra": "Suero",
+    "precioSugerido": 325
+  },
+  {
+    "id": 116,
+    "nombre": "CREATINFOSFOQUINASA (CPK)",
+    "muestra": "Suero",
+    "precioSugerido": 260
+  },
+  {
+    "id": 117,
+    "nombre": "DIMERO D",
+    "muestra": "Plasma citratado",
+    "precioSugerido": 580
+  },
+  {
+    "id": 118,
+    "nombre": "FERRITINA",
+    "muestra": "Suero",
+    "precioSugerido": 330
+  },
+  {
+    "id": 119,
+    "nombre": "HEPATITIS A IgG",
+    "muestra": "Suero",
+    "precioSugerido": 530
+  },
+  {
+    "id": 120,
+    "nombre": "HEPATITIS A IgM",
+    "muestra": "Suero",
+    "precioSugerido": 530
+  },
+  {
+    "id": 121,
+    "nombre": "HEPATITIS A IgG Igm",
+    "muestra": "Suero",
+    "precioSugerido": 930
+  },
+  {
+    "id": 122,
+    "nombre": "HEPATITIS B (HBc Ac IgG) core IgG",
+    "muestra": "Suero",
+    "precioSugerido": 530
+  },
+  {
+    "id": 123,
+    "nombre": "HEPATITIS B (HBc Ac IgM) core IgM",
+    "muestra": "Suero",
+    "precioSugerido": 530
+  },
+  {
+    "id": 124,
+    "nombre": "HEPATITIS B (HB e Ac)",
+    "muestra": "Suero",
+    "precioSugerido": 520
+  },
+  {
+    "id": 125,
+    "nombre": "HEPATITIS B (HB e Ag)",
+    "muestra": "Suero",
+    "precioSugerido": 470
+  },
+  {
+    "id": 126,
+    "nombre": "HEPATITIS B Ag de superficie (AUSTRALIA)",
+    "muestra": "Suero",
+    "precioSugerido": 390
+  },
+  {
+    "id": 127,
+    "nombre": "HEPATITIS B Ac. (HBs Ac)",
+    "muestra": "Suero",
+    "precioSugerido": 530
+  },
+  {
+    "id": 128,
+    "nombre": "HEPATITIS B IgG e IgM",
+    "muestra": "Suero",
+    "precioSugerido": 1580
+  },
+  {
+    "id": 129,
+    "nombre": "HEPATITIS C (HCV Ac)",
+    "muestra": "Suero",
+    "precioSugerido": 480
+  },
+  {
+    "id": 130,
+    "nombre": "HORMONA ANTIMULERIANA",
+    "muestra": "Suero",
+    "precioSugerido": 2250
+  },
+  {
+    "id": 131,
+    "nombre": "HORMONA ADENOCORTICOTROFICA (ACTH)",
+    "muestra": "Plasma EDTA",
+    "precioSugerido": 460
+  },
+  {
+    "id": 132,
+    "nombre": "HORMONA ESTIMULANTE DE TIROIDES (TSH)",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 133,
+    "nombre": "HORMONA FOLICULO ESTIMULANTE (FSH)",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 134,
+    "nombre": "HCG TUMORAL",
+    "muestra": "Suero",
+    "precioSugerido": 380
+  },
+  {
+    "id": 135,
+    "nombre": "HORMONA LUTEINIZANTE (LH)",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 136,
+    "nombre": "RESISTENCIA A LA INSULINA",
+    "muestra": "Suero",
+    "precioSugerido": 450
+  },
+  {
+    "id": 137,
+    "nombre": "INMUNOGLOBULINA A",
+    "muestra": "Suero",
+    "precioSugerido": 300
+  },
+  {
+    "id": 138,
+    "nombre": "INMUNOGLOBULINA D",
+    "muestra": "Suero",
+    "precioSugerido": 300
+  },
+  {
+    "id": 139,
+    "nombre": "INMUNOGLOBULINA E",
+    "muestra": "Suero",
+    "precioSugerido": 300
+  },
+  {
+    "id": 140,
+    "nombre": "INMUNOGLOBULINA G",
+    "muestra": "Suero",
+    "precioSugerido": 300
+  },
+  {
+    "id": 141,
+    "nombre": "INMUNOGLOBULINA M",
+    "muestra": "Suero",
+    "precioSugerido": 300
+  },
+  {
+    "id": 142,
+    "nombre": "INMUNOGLOBULINA G (IGG 1, 2, 3, 4)",
+    "muestra": "Suero",
+    "precioSugerido": 3170
+  },
+  {
+    "id": 143,
+    "nombre": "INSULINA BASAL",
+    "muestra": "Suero",
+    "precioSugerido": 300
+  },
+  {
+    "id": 144,
+    "nombre": "PAPANICOLAOU",
+    "muestra": "Frotis",
+    "precioSugerido": 410
+  },
+  {
+    "id": 145,
+    "nombre": "PEPTIDO C",
+    "muestra": "Suero",
+    "precioSugerido": 370
+  },
+  {
+    "id": 146,
+    "nombre": "PEPTIDO NATRIUREICO CEREBRAL (BNP)",
+    "muestra": "Plasma EDTA",
+    "precioSugerido": 950
+  },
+  {
+    "id": 147,
+    "nombre": "PERFIL ANTINUCLEARES (AN)",
+    "muestra": "Suero",
+    "precioSugerido": 1700
+  },
+  {
+    "id": 148,
+    "nombre": "PERFIL DE HIERRO",
+    "muestra": "Suero",
+    "precioSugerido": 700
+  },
+  {
+    "id": 149,
+    "nombre": "PERFIL DE INMUNOGLOBULINAS (IgM. IgG, IgE, Iga)",
+    "muestra": "Suero",
+    "precioSugerido": 730
+  },
+  {
+    "id": 150,
+    "nombre": "PERFIL GINECOLOGICO",
+    "muestra": "Suero",
+    "precioSugerido": 830
+  },
+  {
+    "id": 151,
+    "nombre": "PERFIL HORMONAL ESPECIAL",
+    "muestra": "Suero",
+    "precioSugerido": 1250
+  },
+  {
+    "id": 152,
+    "nombre": "PERFIL PROSTATICO",
+    "muestra": "Suero",
+    "precioSugerido": 570
+  },
+  {
+    "id": 153,
+    "nombre": "PERFIL TIROIDEO",
+    "muestra": "Suero",
+    "precioSugerido": 580
+  },
+  {
+    "id": 154,
+    "nombre": "PERFIL TORCH",
+    "muestra": "Suero",
+    "precioSugerido": 1600
+  },
+  {
+    "id": 155,
+    "nombre": "PRO- PEPTIDO NATRIUREICO CERBRAL (NT- PRO BNP)",
+    "muestra": "Plasma EDTA",
+    "precioSugerido": 1040
+  },
+  {
+    "id": 156,
+    "nombre": "PROCALCITONINA",
+    "muestra": "Suero",
+    "precioSugerido": 435
+  },
+  {
+    "id": 157,
+    "nombre": "PROGESTERONA",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 158,
+    "nombre": "PROLACTINA",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 159,
+    "nombre": "PROTEINA C REACTIVA ULTRASENSIBLE",
+    "muestra": "Suero",
+    "precioSugerido": 270
+  },
+  {
+    "id": 160,
+    "nombre": "QUIMICA SANGUINEA 14",
+    "muestra": "Suero",
+    "precioSugerido": 700
+  },
+  {
+    "id": 161,
+    "nombre": "QUIMICA SANGUINEA 15",
+    "muestra": "Suero",
+    "precioSugerido": 660
+  },
+  {
+    "id": 162,
+    "nombre": "QUIMICA SANGUINEA 18",
+    "muestra": "Suero",
+    "precioSugerido": 720
+  },
+  {
+    "id": 163,
+    "nombre": "QUIMICA SANGUINEA 24",
+    "muestra": "Suero",
+    "precioSugerido": 730
+  },
+  {
+    "id": 164,
+    "nombre": "QUIMICA SANGUINEA 25",
+    "muestra": "Suero",
+    "precioSugerido": 750
+  },
+  {
+    "id": 165,
+    "nombre": "QUIMICA SANGUINEA 28",
+    "muestra": "Suero",
+    "precioSugerido": 780
+  },
+  {
+    "id": 166,
+    "nombre": "QUIMICA SANGUINEA 32",
+    "muestra": "Suero",
+    "precioSugerido": 850
+  },
+  {
+    "id": 167,
+    "nombre": "QUIMICA SANGUINEA 33",
+    "muestra": "Suero",
+    "precioSugerido": 950
+  },
+  {
+    "id": 168,
+    "nombre": "QUIMICA SANGUINEA 35",
+    "muestra": "Suero",
+    "precioSugerido": 980
+  },
+  {
+    "id": 169,
+    "nombre": "QUIMICA SANGUINEA 39",
+    "muestra": "Suero",
+    "precioSugerido": 1150
+  },
+  {
+    "id": 170,
+    "nombre": "QUIMICA SANGUINEA 42",
+    "muestra": "Suero",
+    "precioSugerido": 1220
+  },
+  {
+    "id": 171,
+    "nombre": "QUIMICA SANGUINEA 44",
+    "muestra": "Suero",
+    "precioSugerido": 1280
+  },
+  {
+    "id": 172,
+    "nombre": "QUIMICA SANGUINEA 45",
+    "muestra": "Suero",
+    "precioSugerido": 1350
+  },
+  {
+    "id": 173,
+    "nombre": "QUIMICA SANGUINEA 48",
+    "muestra": "Suero",
+    "precioSugerido": 1400
+  },
+  {
+    "id": 174,
+    "nombre": "QUIMICA SANGUINEA 50",
+    "muestra": "Suero",
+    "precioSugerido": 1450
+  },
+  {
+    "id": 175,
+    "nombre": "TAMIZ METABOLICO NEONATAL",
+    "muestra": "Papel tamiz",
+    "precioSugerido": 750
+  },
+  {
+    "id": 176,
+    "nombre": "TAMIZ METABOLICO NEONATAL AMPLIADO",
+    "muestra": "Papel tamiz",
+    "precioSugerido": 950
+  },
+  {
+    "id": 177,
+    "nombre": "TAMIZ METABOLICO NEONATAL MODIFICADO",
+    "muestra": "Papel tamiz",
+    "precioSugerido": 1050
+  },
+  {
+    "id": 178,
+    "nombre": "TESTOSTERONA LIBRE",
+    "muestra": "Suero",
+    "precioSugerido": 280
+  },
+  {
+    "id": 179,
+    "nombre": "TESTOSTERONA TOTAL",
+    "muestra": "Suero",
+    "precioSugerido": 250
+  },
+  {
+    "id": 180,
+    "nombre": "VITAMINA A",
+    "muestra": "Suero",
+    "precioSugerido": 1400
+  },
+  {
+    "id": 181,
+    "nombre": "VITAMINA B1 TIAMINA",
+    "muestra": "Sangre total EDTA",
+    "precioSugerido": 4640
+  },
+  {
+    "id": 182,
+    "nombre": "VITAMINA B6",
+    "muestra": "Sangre total EDTA",
+    "precioSugerido": 4240
+  },
+  {
+    "id": 183,
+    "nombre": "VITAMINA B12",
+    "muestra": "Suero",
+    "precioSugerido": 450
+  },
+  {
+    "id": 184,
+    "nombre": "VITAMINA D 25",
+    "muestra": "Suero",
+    "precioSugerido": 630
+  }
+]

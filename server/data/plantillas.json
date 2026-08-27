@@ -1,0 +1,1503 @@
+{
+  "1": {
+    "nombre": "Biometría Hemática",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "PARÁMETROS",
+        "parametros": [
+          {
+            "nombre": "Leucocitos",
+            "tipo": "numero",
+            "unidad": "x10^3/µL",
+            "referencia": {
+              "base": "4.00 - 10.5",
+              "edad": [
+                {
+                  "min": 0,
+                  "max": 5,
+                  "valor": "4.0 - 10.5"
+                },
+                {
+                  "min": 6,
+                  "max": 12,
+                  "valor": "3.5 - 9.8"
+                }
+              ]
+            }
+          },
+          {
+            "nombre": "Linfocitos",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "20 - 45"
+          },
+          {
+            "nombre": "Segmentados",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "40 - 70"
+          },
+          {
+            "nombre": "Bandas",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "0 - 5"
+          },
+          {
+            "nombre": "Eosinófilos",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "0 - 5"
+          },
+          {
+            "nombre": "Monocitos",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "2 - 10"
+          },
+          {
+            "nombre": "Basófilos",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "0 - 2"
+          },
+          {
+            "nombre": "Eritrocitos",
+            "tipo": "numero",
+            "unidad": "x10^6/µL",
+            "referencia": {
+              "base": "4.10 - 5.40",
+              "porSexo": {
+                "M": "4.20 - 6.00",
+                "F": "4.10 - 5.40"
+              }
+            }
+          },
+          {
+            "nombre": "Hemoglobina",
+            "tipo": "numero",
+            "unidad": "g/dL",
+            "referencia": {
+              "base": "12.5 - 16.0",
+              "porSexo": {
+                "M": "13.5 - 18.0",
+                "F": "12.5 - 16.0"
+              }
+            }
+          },
+          {
+            "nombre": "Hematocrito",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": {
+              "base": "37.0 - 47.0",
+              "porSexo": {
+                "M": "42.0 - 52.0",
+                "F": "37.0 - 47.0"
+              }
+            }
+          },
+          {
+            "nombre": "VCM",
+            "tipo": "numero",
+            "unidad": "fL",
+            "referencia": "78.0 - 100.0"
+          },
+          {
+            "nombre": "HCM",
+            "tipo": "numero",
+            "unidad": "pg",
+            "referencia": "27.0 - 31.0"
+          },
+          {
+            "nombre": "CHCM",
+            "tipo": "numero",
+            "unidad": "g/dL",
+            "referencia": "32.0 - 36.0"
+          },
+          {
+            "nombre": "RDW",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "11.5 - 14.0"
+          },
+          {
+            "nombre": "Plaquetas",
+            "tipo": "numero",
+            "unidad": "x10^3/µL",
+            "referencia": "150 - 400"
+          },
+          {
+            "nombre": "MPV",
+            "tipo": "numero",
+            "unidad": "fL",
+            "referencia": "7.0 - 11.0"
+          },
+          {
+            "nombre": "PCT",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "0.20 - 0.50"
+          },
+          {
+            "nombre": "PDW",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "10.0 - 28.0"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "2": {
+    "nombre": "Amiba en fresco",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "EXAMEN MACROSCÓPICO",
+        "parametros": [
+          {
+            "nombre": "Color",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": ""
+          },
+          {
+            "nombre": "Consistencia",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": ""
+          }
+        ]
+      },
+      {
+        "nombre": "EXAMEN MICROSCÓPICO",
+        "parametros": [
+          {
+            "nombre": "Amibas hematófagas",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Entamoeba coli",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Endolimax nana",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Iodamoeba bütschlii",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Chilomastix mesnili",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Giardia lamblia",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Otros patógenos",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "3": {
+    "nombre": "Antígeno prostático",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "INMUNOLOGÍA",
+        "parametros": [
+          {
+            "nombre": "PSA Total",
+            "tipo": "numero",
+            "unidad": "ng/mL",
+            "referencia": "< 4.00"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "4": {
+    "nombre": "Ácido Úrico",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "QUÍMICA CLÍNICA",
+        "parametros": [
+          {
+            "nombre": "Ácido Úrico",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": {
+              "base": "Ref. por sexo",
+              "porSexo": {
+                "M": "3.5 - 7.2",
+                "F": "2.6 - 6.0"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "5": {
+    "nombre": "Antidoping completo",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "RESULTADO",
+        "parametros": [
+          {
+            "nombre": "Marihuana",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Cocaína",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Metanfetaminas",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Anfetaminas",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Bencodiazepinas",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Barbitúricos",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Opiáceos",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Fenciclidina",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Corte analítico según método (CGO / EMIT). Resultado cualitativo."
+  },
+  "6": {
+    "nombre": "Cistatina C",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "QUÍMICA CLÍNICA",
+        "parametros": [
+          {
+            "nombre": "Cistatina C",
+            "tipo": "numero",
+            "unidad": "mg/L",
+            "referencia": "0.62 - 1.15"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "7": {
+    "nombre": "Colesterol",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "PERFIL LIPÍDICO",
+        "parametros": [
+          {
+            "nombre": "Colesterol total",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "< 200"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "8": {
+    "nombre": "Coprológico",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "EXAMEN MACROSCÓPICO",
+        "parametros": [
+          {
+            "nombre": "Color",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": ""
+          },
+          {
+            "nombre": "Consistencia",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": ""
+          },
+          {
+            "nombre": "Moco",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Sangre",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          }
+        ]
+      },
+      {
+        "nombre": "EXAMEN MICROSCÓPICO",
+        "parametros": [
+          {
+            "nombre": "Leucocitos",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Eritrocitos",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Levaduras",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Flora bacteriana",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Normal"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "9": {
+    "nombre": "Coproparasitoscópico (3 muestras)",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "SERIE 1",
+        "parametros": [
+          {
+            "nombre": "Enterobius vermicularis",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Ascaris lumbricoides",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Uncinarias",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Trichuris trichiura",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Strongyloides stercoralis",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Taenia solium",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Hymenolepis nana",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Giardia lamblia (quiste/trofozoíto)",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Entamoeba histolytica/dispar",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Entamoeba coli",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Endolimax nana",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Iodamoeba bütschlii",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Chilomastix mesnili",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          }
+        ]
+      },
+      {
+        "nombre": "SERIE 2",
+        "parametros": [
+          {
+            "nombre": "Enterobius vermicularis",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Ascaris lumbricoides",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Uncinarias",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Trichuris trichiura",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Strongyloides stercoralis",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Taenia solium",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Hymenolepis nana",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Giardia lamblia (quiste/trofozoíto)",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Entamoeba histolytica/dispar",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Entamoeba coli",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Endolimax nana",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Iodamoeba bütschlii",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Chilomastix mesnili",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          }
+        ]
+      },
+      {
+        "nombre": "SERIE 3",
+        "parametros": [
+          {
+            "nombre": "Enterobius vermicularis",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Ascaris lumbricoides",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Uncinarias",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Trichuris trichiura",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Strongyloides stercoralis",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Taenia solium",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Hymenolepis nana",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Giardia lamblia (quiste/trofozoíto)",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Entamoeba histolytica/dispar",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Entamoeba coli",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Endolimax nana",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Iodamoeba bütschlii",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Chilomastix mesnili",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Se estudian tres muestras en días distintos."
+  },
+  "10": {
+    "nombre": "Creatinina",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "QUÍMICA CLÍNICA",
+        "parametros": [
+          {
+            "nombre": "Creatinina",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": {
+              "base": "Ref. por sexo",
+              "porSexo": {
+                "M": "0.70 - 1.30",
+                "F": "0.60 - 1.10"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "11": {
+    "nombre": "Curva de tolerancia a la glucosa",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "CURVA DE TOLERANCIA",
+        "parametros": [
+          {
+            "nombre": "Glucosa basal",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "70 - 100"
+          },
+          {
+            "nombre": "Glucosa 60 minutos",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "< 180"
+          },
+          {
+            "nombre": "Glucosa 90 minutos",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "< 160"
+          },
+          {
+            "nombre": "Glucosa 120 minutos",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "< 140"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Carga oral de 75 g de glucosa anhidra."
+  },
+  "12": {
+    "nombre": "Deshidrogenasa láctica (DHL)",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "QUÍMICA CLÍNICA",
+        "parametros": [
+          {
+            "nombre": "Deshidrogenasa láctica (LDH)",
+            "tipo": "numero",
+            "unidad": "U/L",
+            "referencia": "140 - 280"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "13": {
+    "nombre": "EGO",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "EXAMEN FÍSICO",
+        "parametros": [
+          {
+            "nombre": "Color",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Amarillo ámbar"
+          },
+          {
+            "nombre": "Aspecto",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Claro"
+          },
+          {
+            "nombre": "Olor",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Característico"
+          },
+          {
+            "nombre": "Densidad",
+            "tipo": "numero",
+            "unidad": "",
+            "referencia": "1.005 - 1.030"
+          }
+        ]
+      },
+      {
+        "nombre": "EXAMEN QUÍMICO",
+        "parametros": [
+          {
+            "nombre": "pH",
+            "tipo": "numero",
+            "unidad": "",
+            "referencia": "4.8 - 7.8"
+          },
+          {
+            "nombre": "Proteínas",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Glucosa",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Cetonas",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Bilirrubina",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Urobilinógeno",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Normal"
+          },
+          {
+            "nombre": "Nitritos",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Sangre",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Esterasa leucocitaria",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          }
+        ]
+      },
+      {
+        "nombre": "EXAMEN MICROSCÓPICO",
+        "parametros": [
+          {
+            "nombre": "Leucocitos",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "0 - 3 x campo"
+          },
+          {
+            "nombre": "Eritrocitos",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "0 - 2 x campo"
+          },
+          {
+            "nombre": "Células epiteliales",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Pocas"
+          },
+          {
+            "nombre": "Cilindros",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausentes"
+          },
+          {
+            "nombre": "Cristales",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ocasional"
+          },
+          {
+            "nombre": "Bacterias",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ocasional"
+          },
+          {
+            "nombre": "Trichomonas vaginalis",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          },
+          {
+            "nombre": "Levaduras",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ausente"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "14": {
+    "nombre": "Eosinófilos en moco nasal",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "CITOLOGÍA",
+        "parametros": [
+          {
+            "nombre": "Eosinófilos",
+            "tipo": "texto",
+            "unidad": "x campo",
+            "referencia": "Ausentes"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "15": {
+    "nombre": "Glucosa postprandial",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "QUÍMICA CLÍNICA",
+        "parametros": [
+          {
+            "nombre": "Glucosa postprandial (2 hrs)",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "< 140"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Tomar 2 horas después de ingesta habitual."
+  },
+  "16": {
+    "nombre": "Glucosa",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "QUÍMICA CLÍNICA",
+        "parametros": [
+          {
+            "nombre": "Glucosa",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "70 - 100"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Exige ayuno mínimo de 8 horas."
+  },
+  "17": {
+    "nombre": "Grupo RH",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "BANCO DE SANGRE",
+        "parametros": [
+          {
+            "nombre": "Grupo sanguíneo",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "A / B / AB / O"
+          },
+          {
+            "nombre": "Factor Rh",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Positivo / Negativo"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Método de aglutinación directa."
+  },
+  "18": {
+    "nombre": "Hb glicosilada",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "QUÍMICA CLÍNICA",
+        "parametros": [
+          {
+            "nombre": "Hemoglobina glucosilada (HbA1c)",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "4.0 - 5.6"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Control glucémico aproximado a 3 meses."
+  },
+  "19": {
+    "nombre": "HCG cuantitativa",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "INMUNOLOGÍA",
+        "parametros": [
+          {
+            "nombre": "β-HCG cuantitativa",
+            "tipo": "numero",
+            "unidad": "mUI/mL",
+            "referencia": "< 5.00"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Valores dependen de semanas de gestación."
+  },
+  "20": {
+    "nombre": "HCG",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "INMUNOLOGÍA",
+        "parametros": [
+          {
+            "nombre": "Gonadotropina coriónica (cualitativa)",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "21": {
+    "nombre": "Helicobacter pylori",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "INMUNOLOGÍA",
+        "parametros": [
+          {
+            "nombre": "Anticuerpos IgG",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "No Reactivo"
+          },
+          {
+            "nombre": "Anticuerpos IgA",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "No Reactivo"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Serología de anticuerpos contra Helicobacter pylori."
+  },
+  "22": {
+    "nombre": "PFH completas",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "FUNCIÓN HEPÁTICA",
+        "parametros": [
+          {
+            "nombre": "Bilirrubina total",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "0.30 - 1.20"
+          },
+          {
+            "nombre": "Bilirrubina directa",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "0.00 - 0.30"
+          },
+          {
+            "nombre": "Bilirrubina indirecta",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "0.20 - 0.80"
+          },
+          {
+            "nombre": "TGP (ALT)",
+            "tipo": "numero",
+            "unidad": "U/L",
+            "referencia": "5 - 45"
+          },
+          {
+            "nombre": "TGO (AST)",
+            "tipo": "numero",
+            "unidad": "U/L",
+            "referencia": "5 - 40"
+          },
+          {
+            "nombre": "Fosfatasa alcalina",
+            "tipo": "numero",
+            "unidad": "U/L",
+            "referencia": "40 - 129"
+          },
+          {
+            "nombre": "Proteínas totales",
+            "tipo": "numero",
+            "unidad": "g/dL",
+            "referencia": "6.40 - 8.30"
+          },
+          {
+            "nombre": "Albúmina",
+            "tipo": "numero",
+            "unidad": "g/dL",
+            "referencia": "3.50 - 5.00"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "23": {
+    "nombre": "Perfil de lípidos",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "PERFIL LIPÍDICO",
+        "parametros": [
+          {
+            "nombre": "Colesterol total",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "< 200"
+          },
+          {
+            "nombre": "Triglicéridos",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "< 150"
+          },
+          {
+            "nombre": "Colesterol HDL",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": {
+              "base": "Ref. por sexo",
+              "porSexo": {
+                "M": "> 40",
+                "F": "> 50"
+              }
+            }
+          },
+          {
+            "nombre": "Colesterol LDL",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "< 130"
+          },
+          {
+            "nombre": "Relación Colesterol/HDL",
+            "tipo": "numero",
+            "unidad": "",
+            "referencia": "< 5.0"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "24": {
+    "nombre": "Perfil embarazo",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "PANEL DE EMBARAZO",
+        "parametros": [
+          {
+            "nombre": "Biometría hemática",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Ver estudio"
+          },
+          {
+            "nombre": "Glucosa",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "70 - 110"
+          },
+          {
+            "nombre": "VDRL",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "No Reactivo"
+          },
+          {
+            "nombre": "Anti-VIH",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "No Reactivo"
+          },
+          {
+            "nombre": "Grupo y factor Rh",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": ""
+          }
+        ]
+      }
+    ],
+    "observaciones": "Incluye Biometría, Glucosa, VDRL, VIH y Grupo/Rh."
+  },
+  "25": {
+    "nombre": "Perfil reumático",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "PERFIL REUMÁTICO",
+        "parametros": [
+          {
+            "nombre": "Velocidad de sedimentación globular (VSG)",
+            "tipo": "numero",
+            "unidad": "mm/hr",
+            "referencia": "0 - 20"
+          },
+          {
+            "nombre": "Proteína C reactiva (PCR)",
+            "tipo": "numero",
+            "unidad": "mg/L",
+            "referencia": "< 6.00"
+          },
+          {
+            "nombre": "Factor reumatoide",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "NEGATIVO"
+          },
+          {
+            "nombre": "Antiestreptolisina O (ASO)",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "NEGATIVO"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "26": {
+    "nombre": "Quimica parcial",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "QUÍMICA CLÍNICA",
+        "parametros": [
+          {
+            "nombre": "Glucosa",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "70 - 110"
+          },
+          {
+            "nombre": "Urea",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "15 - 40"
+          },
+          {
+            "nombre": "Creatinina",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "0.60 - 1.30"
+          },
+          {
+            "nombre": "Nitrógeno ureico (BUN)",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "7 - 20"
+          },
+          {
+            "nombre": "Ácido Úrico",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "3.00 - 7.00"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "27": {
+    "nombre": "Reacciones febriles",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "FEBRILES 1",
+        "parametros": [
+          {
+            "nombre": "Salmonella typhi \"H\"",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Salmonella typhi \"O\"",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Salmonella paratyphi \"AH\"",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          }
+        ]
+      },
+      {
+        "nombre": "FEBRILES 2",
+        "parametros": [
+          {
+            "nombre": "Proteus OX-19",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Proteus OX-2",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Proteus OX-K",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Reacción de aglutinación (Widal / Weil-Felix)."
+  },
+  "28": {
+    "nombre": "Sangre oculta en heces",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "HECES",
+        "parametros": [
+          {
+            "nombre": "Muestra 1",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          },
+          {
+            "nombre": "Muestra 2",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "Negativo"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Dieta sin carnes rojas 3 días previos."
+  },
+  "29": {
+    "nombre": "Tiempos de coagulación",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "COAGULACIÓN",
+        "parametros": [
+          {
+            "nombre": "Tiempo de protrombina (TP)",
+            "tipo": "numero",
+            "unidad": "segundos",
+            "referencia": "11.0 - 13.5"
+          },
+          {
+            "nombre": "INR",
+            "tipo": "numero",
+            "unidad": "",
+            "referencia": "0.80 - 1.20"
+          },
+          {
+            "nombre": "Tiempo de tromboplastina parcial (TTPa)",
+            "tipo": "numero",
+            "unidad": "segundos",
+            "referencia": "25.0 - 38.0"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "30": {
+    "nombre": "Urea",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "QUÍMICA CLÍNICA",
+        "parametros": [
+          {
+            "nombre": "Urea",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "15 - 40"
+          },
+          {
+            "nombre": "Nitrógeno ureico (BUN)",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "7 - 20"
+          }
+        ]
+      }
+    ],
+    "observaciones": ""
+  },
+  "31": {
+    "nombre": "VDRL",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "INMUNOLOGÍA",
+        "parametros": [
+          {
+            "nombre": "VDRL",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "No Reactivo"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Prueba no treponémica para sífilis."
+  },
+  "32": {
+    "nombre": "VIH",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "INMUNOLOGÍA",
+        "parametros": [
+          {
+            "nombre": "Anti-VIH (tamizaje)",
+            "tipo": "texto",
+            "unidad": "",
+            "referencia": "No Reactivo"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Tamizaje; resultado reactivo requiere prueba confirmatoria."
+  },
+  "33": {
+    "nombre": "Reticulocitos",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "HEMATOLOGÍA",
+        "parametros": [
+          {
+            "nombre": "Reticulocitos",
+            "tipo": "numero",
+            "unidad": "%",
+            "referencia": "0.5 - 1.5"
+          },
+          {
+            "nombre": "Reticulocitos absolutos",
+            "tipo": "numero",
+            "unidad": "/µL",
+            "referencia": "25,000 - 75,000"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Referencia para adulto."
+  },
+  "34": {
+    "nombre": "Triglicéridos",
+    "membrete": "general",
+    "grupos": [
+      {
+        "nombre": "PERFIL LIPÍDICO",
+        "parametros": [
+          {
+            "nombre": "Triglicéridos",
+            "tipo": "numero",
+            "unidad": "mg/dL",
+            "referencia": "< 150"
+          }
+        ]
+      }
+    ],
+    "observaciones": "Ayuno de 12 horas."
+  }
+}

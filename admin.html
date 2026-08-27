@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin - Edición rápida</title>
+  <style>
+    body{font-family:Segoe UI,Arial;background:#f6f7fb;color:#222;margin:0;padding:20px}
+    header{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+    .tab{padding:8px 12px;border-radius:6px;background:#fff;border:1px solid #e0e4ee;cursor:pointer}
+    .tab.active{background:#1f6feb;color:#fff;border-color:#1f6feb}
+    .toolbar{margin-left:auto}
+    .panel{background:#fff;border:1px solid #e0e4ee;padding:12px;border-radius:6px}
+    .list{max-height:420px;overflow:auto;margin-top:8px;border-top:1px dashed #eee;padding-top:8px}
+    .item{display:flex;gap:8px;align-items:flex-start;padding:8px;border-bottom:1px solid #f0f2fa}
+    .item pre{background:#fbfbff;padding:8px;border-radius:4px;border:1px solid #eee;white-space:pre-wrap}
+    .controls{margin-left:auto;display:flex;gap:6px}
+    textarea.json{width:100%;height:120px;font-family:monospace}
+    .form-row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+    label{min-width:80px}
+    input[type=text],input[type=number]{padding:6px;border:1px solid #ddd;border-radius:4px}
+    button{padding:6px 10px;border-radius:6px;border:0;background:#1f6feb;color:#fff;cursor:pointer}
+    button.ghost{background:#fff;color:#333;border:1px solid #ddd}
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Admin - Edición rápida de tablas</h2>
+    <nav class="toolbar">
+      <button id="tab-pacientes" class="tab active">Pacientes</button>
+      <button id="tab-estudios" class="tab">Estudios</button>
+      <button id="tab-plantillas" class="tab">Plantillas</button>
+      <button id="tab-ordenes" class="tab">Órdenes</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="panel" class="panel">
+      <!-- Dynamic content injected by JS -->
+    </section>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

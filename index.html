@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recepción | Laboratorio</title>
+    <link rel="stylesheet" href="css/style.css?v=20260826-lowres-fit2" />
+  </head>
+
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <nav class="topbar-nav" aria-label="Navegación principal">
+          <button class="nav-tab active" type="button" data-screen="recepcion">Recepción</button>
+          <button class="nav-tab" type="button" data-screen="historial">Historial</button>
+          <button class="nav-tab" type="button" data-screen="estudios">Estudios</button>
+        </nav>
+
+        <div class="topbar-status">
+          <span id="modo-demo-indicator" class="demo-badge" hidden>Modo demo</span>
+          <div class="topbar-date">
+            <span>Hoy</span>
+            <strong id="fecha-actual">Cargando...</strong>
+          </div>
+        </div>
+      </header>
+
+      <section id="screen-recepcion" class="screen-panel is-active">
+        <div class="workspace">
+          <aside class="order-panel">
+            <div class="panel-title" aria-hidden="true">
+              <div class="panel-title-copy">
+                <span class="panel-title-spacer"></span>
+              </div>
+            </div>
+
+            <form id="form-orden" class="order-form">
+              <div class="order-content">
+                <section class="form-section patient-section">
+                  <div class="section-heading">
+                    <h2>Paciente</h2>
+
+                    <div class="patient-tools">
+                      <input
+                        id="buscar-paciente"
+                        name="buscarPaciente"
+                        type="search"
+                        placeholder="Buscar paciente"
+                        autocomplete="off"
+                      />
+                      <div id="lista-pacientes" class="autocomplete-list"></div>
+                      <button
+                        type="button"
+                        class="text-button"
+                        id="btn-nuevo-paciente"
+                      >
+                        Nuevo paciente
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="patient-grid">
+                    <div class="patient-grid-col">
+                      <div class="field">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" />
+                      </div>
+                      <div class="field">
+                        <label for="apellido-paterno">Apellido paterno</label>
+                        <input id="apellido-paterno" name="apellidoPaterno" type="text" />
+                      </div>
+                      <div class="field">
+                        <label for="apellido-materno">Apellido materno</label>
+                        <input id="apellido-materno" name="apellidoMaterno" type="text" />
+                      </div>
+                      <div class="field">
+                        <label for="telefono">Teléfono</label>
+                        <input id="telefono" name="telefono" type="tel" />
+                      </div>
+                    </div>
+
+                    <div class="patient-grid-col">
+                      <div class="field">
+                        <label>Fecha de nacimiento</label>
+                        <div class="date-input-group">
+                          <select id="dia-nacimiento">
+                            <option value="" disabled selected>Día</option>
+                          </select>
+                          <select id="mes-nacimiento">
+                            <option value="" disabled selected>Mes</option>
+                          </select>
+                          <select id="anio-nacimiento">
+                            <option value="" disabled selected>Año</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="field age-field">
+                        <label for="edad">Edad</label>
+                        <span id="edad" class="age-text"></span>
+                      </div>
+                      <div class="field">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" name="sexo">
+                          <option value="">Seleccionar</option>
+                          <option value="M">Masculino</option>
+                          <option value="F">Femenino</option>
+                        </select>
+                      </div>
+                      <div class="field">
+                        <label for="contacto">Contacto</label>
+                        <input id="contacto" name="contacto" type="text" placeholder="Familiar o responsable" />
+                      </div>
+                    </div>
+                  </div>
+
+                </section>
+
+                <section class="form-section studies-section">
+                  <div class="section-heading">
+                    <h2>Estudios</h2>
+
+                    <div class="study-search">
+                      <input
+                        id="buscar-estudio"
+                        name="buscarEstudio"
+                        type="search"
+                        placeholder="Buscar estudio"
+                      />
+
+                      <div id="lista-estudios-busqueda" class="autocomplete-list"></div>
+                      <button
+                        id="btn-agregar-estudio"
+                        class="icon-button"
+                        type="button"
+                        aria-label="Agregar estudio"
+                      >+</button>
+                    </div>
+                  </div>
+
+                  <div class="studies-table">
+                    <div class="study-table-header">
+                      <span>Estudio</span>
+                      <span>Muestra</span>
+                      <span>Sugerido</span>
+                      <span>Precio</span>
+                      <span></span>
+                    </div>
+
+                    <div class="selected-studies" id="lista-estudios"></div>
+                  </div>
+                </section>
+
+                <section class="form-section payment-section">
+                  <div class="section-heading">
+                    <h2>Resumen</h2>
+                  </div>
+
+                  <div class="payment-summary">
+                    <div class="amount-row total-row">
+                      <span>Total</span>
+                      <strong id="total">$190.00</strong>
+                    </div>
+
+                    <label class="amount-row amount-input" for="pago">
+                      <span>Cantidad pagada</span>
+                      <input
+                        id="pago"
+                        name="pago"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        placeholder="$0.00"
+                      />
+                    </label>
+
+                    <div class="amount-row balance-row">
+                      <span>Saldo pendiente</span>
+                      <strong id="saldo">$190.00</strong>
+                    </div>
+
+                    <div class="save-actions">
+                      <button class="save-order" type="submit">Guardar orden</button>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              <footer class="form-actions"></footer>
+            </form>
+          </aside>
+
+          <section class="dashboard">
+            <div class="dashboard-header" aria-hidden="true">
+              <div class="dashboard-header-copy">
+                <span class="dashboard-title-spacer"></span>
+              </div>
+            </div>
+
+            <div class="status-columns">
+              <section class="status-panel capture-panel">
+                <header class="status-header">
+                  <div>
+                    <span class="status-dot blue"></span>
+                    <h3>Por capturar</h3>
+                  </div>
+                  <span class="badge">2</span>
+                </header>
+
+                <div class="orders-list">
+                </div>
+              </section>
+
+              <section class="status-panel delivery-panel">
+                <header class="status-header">
+                  <div>
+                    <span class="status-dot green"></span>
+                    <h3>Por entregar</h3>
+                  </div>
+                  <span class="badge green-badge">0</span>
+                </header>
+
+                <div class="orders-list">
+                </div>
+              </section>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="screen-historial" class="screen-panel">
+        <div class="history-panel">
+          <div class="history-header">
+            <div>
+              <p class="eyebrow">Pacientes y órdenes</p>
+              <h2>Historial clínico</h2>
+            </div>
+          </div>
+
+          <div class="history-summary">
+            <div class="summary-card">
+              <span>Órdenes del día</span>
+              <strong id="history-total-ordenes">0</strong>
+            </div>
+            <div class="summary-card">
+              <span>Pacientes del día</span>
+              <strong id="history-total-pacientes">0</strong>
+            </div>
+            <div class="summary-card">
+              <span id="history-total-ingresos-label">Ingresos del día</span>
+              <strong id="history-total-ingresos">$0.00</strong>
+            </div>
+          </div>
+
+          <div class="history-controls">
+            <label class="search-field history-search" for="buscar-historial">
+              <span>Buscar paciente</span>
+              <input id="buscar-historial" type="search" placeholder="Nombre o folio" />
+            </label>
+
+            <div class="report-controls">
+              <label class="report-field" for="filtro-reporte">
+                <span>Periodo</span>
+                <select id="filtro-reporte">
+                  <option value="diario">Hoy</option>
+                  <option value="semanal">Semanal</option>
+                  <option value="mensual">Mensual</option>
+                </select>
+              </label>
+
+              <label class="report-field report-field-date" for="mes-reporte">
+                <span>Mes</span>
+                <input id="mes-reporte" type="month" />
+              </label>
+            </div>
+
+            <button type="button" class="export-button" id="btn-exportar-pdf">Exportar Excel</button>
+          </div>
+
+          <div class="history-table-wrap">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>Folio</th>
+                  <th>Paciente</th>
+                  <th>Fecha</th>
+                  <th>Estudios</th>
+                  <th>Cobro</th>
+                  <th>Ganancia</th>
+                  <th>Estado</th>
+                  <th>Detalle</th>
+                </tr>
+              </thead>
+              <tbody id="history-table-body"></tbody>
+            </table>
+            <p id="history-empty" class="history-empty">Aún no hay órdenes registradas.</p>
+          </div>
+        </div>
+      </section>
+
+      <div id="modal-ajuste-ganancia" class="modal-overlay hidden">
+        <div class="modal-content gain-adjustment-modal">
+          <header class="modal-header">
+            <div>
+              <p class="eyebrow">Ajuste de ganancia</p>
+              <h2 id="ajuste-ganancia-title">Orden</h2>
+            </div>
+            <button type="button" class="close-modal" data-close-gain-adjustment aria-label="Cerrar ajuste">×</button>
+          </header>
+          <form id="form-ajuste-ganancia" class="gain-adjustment-form">
+            <div class="modal-body">
+              <div class="gain-adjustment-field">
+                <label for="ajuste-ganancia-monto">Monto a descontar</label>
+                <input id="ajuste-ganancia-monto" name="monto" type="number" min="0" step="0.01" placeholder="0.00" required />
+              </div>
+              <div class="gain-adjustment-field">
+                <label for="ajuste-ganancia-concepto">Concepto</label>
+                <input id="ajuste-ganancia-concepto" name="concepto" type="text" maxlength="80" placeholder="Ej. Transporte, descuento, gasto" required />
+              </div>
+            </div>
+            <footer class="modal-footer gain-adjustment-footer">
+              <button type="button" class="secondary-action" data-close-gain-adjustment>Cancelar</button>
+              <button type="submit" class="primary-action">Guardar ajuste</button>
+            </footer>
+          </form>
+        </div>
+      </div>
+
+      <div id="modal-historial-detalle" class="modal-overlay hidden">
+        <div class="modal-content history-detail-modal">
+          <header class="modal-header">
+            <div>
+              <p class="eyebrow">Detalle de orden</p>
+              <h2 id="history-detail-title">Orden</h2>
+            </div>
+            <button type="button" class="close-modal" data-close-history-detail aria-label="Cerrar detalle">×</button>
+          </header>
+          <div class="modal-body">
+            <div id="history-detail-content" class="history-detail-content"></div>
+          </div>
+          <footer class="modal-footer history-detail-footer">
+            <button type="button" class="secondary-action" data-close-history-detail>Cerrar</button>
+            <button type="button" class="primary-action" id="btn-reimprimir-historial">Reimprimir PDF</button>
+          </footer>
+        </div>
+      </div>
+
+      <section id="screen-estudios" class="screen-panel">
+        <div class="study-catalog-panel">
+          <div class="study-catalog-header">
+            <div>
+              <p class="eyebrow">Catálogo</p>
+              <h2>Estudios y referencias</h2>
+            </div>
+            <button type="button" class="primary-action" id="btn-nuevo-estudio">+ Nuevo estudio</button>
+          </div>
+
+          <div class="study-catalog-layout">
+            <aside class="study-catalog-list">
+              <label class="search-field study-catalog-search" for="buscar-estudio-catalogo">
+                <span>Buscar estudio</span>
+                <input id="buscar-estudio-catalogo" type="search" placeholder="Nombre o muestra" />
+              </label>
+              <div class="study-catalog-table-wrap">
+                              <h3 style="margin:8px 12px 0 12px;font-size:14px;color:var(--ink)">Estudios</h3>
+                              <table class="study-catalog-table" style="margin-bottom:12px">
+                                <thead>
+                                  <tr>
+                                    <th>Estudio</th>
+                                    <th>Muestra</th>
+                                    <th>Precio</th>
+                                    <th>Parámetros</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="catalogo-estudios-body"></tbody>
+                              </table>
+
+                              <h3 style="margin:8px 12px 0 12px;font-size:14px;color:var(--ink)">Estudios maquilados</h3>
+                              <table class="study-catalog-table">
+                                <thead>
+                                  <tr>
+                                    <th>Estudio</th>
+                                    <th>Muestra</th>
+                                    <th>Precio</th>
+                                    <th>Parámetros</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="catalogo-estudios-maquilado-body"></tbody>
+                              </table>
+                            </div>
+            </aside>
+
+            <section class="study-editor-panel">
+              <form id="form-editor-estudio" class="study-editor-form">
+                <input type="hidden" id="estudio-id" />
+                <div class="study-editor-scroll">
+ 
+                <div class="study-editor-grid">
+                  <div class="field">
+                    <label for="estudio-nombre">Nombre</label>
+                    <input id="estudio-nombre" type="text" placeholder="Ej. Hemoglobina glicosilada" />
+                  </div>
+ 
+                  <div class="field">
+                    <label for="estudio-muestra">Muestra</label>
+                    <input id="estudio-muestra" type="text" placeholder="Ej. Suero" />
+                  </div>
+ 
+                  <div class="field">
+                    <label for="estudio-precio">Precio sugerido</label>
+                    <input id="estudio-precio" type="number" min="0" step="0.01" placeholder="0.00" />
+                  </div>
+                  <div class="field" style="display:flex;align-items:center;gap:8px">
+                    <label for="estudio-maquilado" style="margin-bottom:0">Maquilado</label>
+                    <input id="estudio-maquilado" type="checkbox" />
+                    <small style="color:var(--muted)">Marcar para estudios que solo se cobran y no requieren captura ni impresión</small>
+                  </div>
+                </div>
+ 
+                <div class="study-editor-help">
+                  <strong>Configuración rápida</strong>
+                  <span>Agrega cada parámetro y define su referencia base. Puedes usar sexo, edad mínima/máxima o varios rangos de edad personalizados según el estudio.</span>
+                </div>
+ 
+                <div class="study-params-header">
+                  <h3>Parámetros</h3>
+                  <button type="button" class="secondary-action" id="btn-agregar-parametro">+ Agregar parámetro</button>
+                </div>
+ 
+                <div id="estudio-parametros-editor" class="study-params-editor"></div>
+                </div>
+
+                <div class="study-editor-actions">
+                  <button type="button" class="danger-action" id="btn-eliminar-estudio" hidden>Eliminar estudio</button>
+                  <button type="button" class="secondary-action" id="btn-reset-estudio">Cancelar</button>
+                  <button type="submit" class="primary-action">Guardar estudio</button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal para Captura de Resultados -->
+      <div id="modal-resultados" class="modal-overlay">
+        <div class="modal-content">
+          <header class="modal-header">
+            <div>
+              <p class="eyebrow">Captura de Resultados</p>
+              <h2 id="modal-estudio-nombre">Biometría Hemática</h2>
+              <strong id="modal-folio">F000125</strong>
+            </div>
+            <button class="close-modal" onclick="cerrarModalResultados()">×</button>
+          </header>
+          <div class="modal-body">
+            <form id="form-resultados" class="results-form">
+              <div id="modal-resultados-contenido">
+                <!-- El contenido del formulario se generará aquí -->
+              </div>
+              <footer class="modal-footer">
+                <button type="submit" class="save-order">Guardar Resultados</button>
+              </footer>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <!-- Scripts de la aplicación -->
+    <script src="./js/app/1_datos.js?v=20260826-maq-demo"></script>
+    <script src="./js/app/2_estado.js?v=20260821-sex-age-optional"></script>
+    <script src="./js/app/3_ordenes.js?v=20260821-sex-age-optional"></script>
+    <script src="./js/app/4_resultados.js?v=20260825-capture-fix"></script>
+
+    <!-- Librerías externas para PDF (cargadas localmente para uso offline) -->
+    <script src="./libs/jspdf.umd.min.js"></script>
+    <script src="./libs/jspdf.plugin.autotable.js"></script>
+    <script src="./libs/xlsx.full.min.js"></script>
+
+    <script src="./js/app/5_pdf.js?v=20260825-pdf-maquilado-fix"></script>
+    <script src="./js/app/helpers.js?v=20260825-code-splitting"></script>
+    <script src="./js/app/app-runtime.js?v=20260826-limit-hist"></script>
+    <script src="./js/app/modules/pacientes.js?v=20260825-code-splitting"></script>
+    <script src="./js/app/modules/estudios.js?v=20260825-code-splitting"></script>
+    <script src="./js/app/modules/ui.js?v=20260825-code-splitting"></script>
+    <script src="./js/app/main.js?v=20260825-age-ranges-ui"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+# ===== Datos personales / operativos: NO se publican =====
+# Pacientes historicos y ordenes contienen informacion personal sensible
+server/data/ordenes.json
+server/data/pacientes.json
+
+# Respaldos (incluyen copias de los datos personales anteriores)
+server/data/backups/
+server/data/backup_pre_maq/
+server/data/backup_pre_seed/
+server/data/data-*.zip
+
+# ===== Entorno / dependencias =====
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# ===== Entorno local del editor =====
+.env
+.env.*
