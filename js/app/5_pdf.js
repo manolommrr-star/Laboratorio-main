@@ -299,13 +299,21 @@ function _drawStudyContentOnPage(doc, orden, estudio, logoData) {
                 yOffset = 35;
             }
 
-            // La línea azul de "PARAMETROS" se elimina: las cabeceras y grupos ahora son texto
-            // con títulos diferenciados pero SIN barra de fondo azul (redundante con la cabecera gris)
-            doc.setFont(PDF_FUENTES.estructura, 'bold');
-            doc.setFontSize(PDF_TAMANIOS.grupoTitulo);
-            doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
-            doc.text(String(grupo.nombre || 'Grupo').toUpperCase(), 20, yOffset);
-            yOffset += 7;
+            // Los grupos llamados "PARÁMETROS" (los que crea el editor) repiten la
+            // cabecera de la tabla, por lo que se omiten. Los demás títulos de
+            // grupo (p. ej. "SERIE BLANCA") sí se dibujan.
+            const tituloGrupo = String(grupo.nombre || '').trim().toUpperCase();
+            const tituloNormalizado = tituloGrupo
+                .replace(/Á/g, 'A').replace(/É/g, 'E').replace(/Í/g, 'I')
+                .replace(/Ó/g, 'O').replace(/Ú/g, 'U');
+            const esGrupoParametros = tituloNormalizado === 'PARAMETROS' || tituloNormalizado === 'PARAMETRO';
+            if (!esGrupoParametros) {
+                doc.setFont(PDF_FUENTES.estructura, 'bold');
+                doc.setFontSize(PDF_TAMANIOS.grupoTitulo);
+                doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
+                doc.text(tituloGrupo, 20, yOffset);
+                yOffset += 7;
+            }
 
             parametros.forEach((param) => {
                 const res = Array.isArray(estudio.resultados)
