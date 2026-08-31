@@ -199,7 +199,7 @@ function dibujarFirma(doc) {
     const centerX = pageWidth / 2;
 
     doc.setDrawColor(PDF_COLORES.grisLinea[0], PDF_COLORES.grisLinea[1], PDF_COLORES.grisLinea[2]);
-    doc.setLineWidth(0.8);
+    doc.setLineWidth(1.2);
     doc.line(centerX - 32, yPosition, centerX + 32, yPosition);
 
     doc.setFont(PDF_FUENTES.cuerpo, 'bold');
