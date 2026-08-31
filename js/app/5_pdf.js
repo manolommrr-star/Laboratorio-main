@@ -41,6 +41,44 @@ function obtenerPlantillaEstudio(estudioId) {
     return window.plantillas[String(estudioId)] || window.plantillas[estudioId] || null;
 }
 
+// ---------------------------------------------------------------------------
+// Paleta, tipografía y medidas del reporte (diseño "RESULTADOS EN PAPEL")
+// ---------------------------------------------------------------------------
+const PDF_COLORES = {
+    azul: [23, 105, 194],
+    azulClaro: [229, 238, 250],
+    grisPanel: [243, 245, 247],
+    grisLinea: [214, 219, 226],
+    texto: [33, 37, 41],
+    textoSuave: [95, 103, 114],
+    blanco: [255, 255, 255],
+};
+
+// Serif para el contenido (formal), sans para cabeceras y barras (legible).
+const PDF_FUENTES = {
+    cuerpo: 'helvetica',
+    estructura: 'helvetica',
+};
+
+const PDF_TAMANIOS = {
+    nombreLab: 15,
+    quimico: 10.5,
+    pie: 8,
+    pacienteValor: 10.5,
+    tituloEstudio: 15,
+    cabeceraTabla: 9,
+    grupoTitulo: 9.5,
+    filaNombre: 10,
+    filaResultado: 11,
+    filaReferencia: 10,
+    observaciones: 10,
+    firma: 11,
+    cedula: 8.5,
+};
+
+// Dimensiones naturales del logo (para escalar sin deformar).
+let __logoMedidas = { w: 0, h: 0 };
+
 async function cargarLogoDataUrl() {
     const rutas = ['assets/logo.PNG', './assets/logo.PNG', 'logo.PNG', 'logo.png', './logo.PNG', './logo.png'];
 
@@ -56,6 +94,22 @@ async function cargarLogoDataUrl() {
                 reader.onerror = reject;
                 reader.readAsDataURL(blob);
             });
+
+            // Capturar las dimensiones reales del logo (mantiene la proporción).
+            try {
+                const img = new Image();
+                const medidas = await new Promise((resolve, reject) => {
+                    img.onload = () => resolve({ w: img.naturalWidth, h: img.naturalHeight });
+                    img.onerror = reject;
+                    img.src = dataUrl;
+                });
+                if (medidas && medidas.w && medidas.h) {
+                    __logoMedidas = { w: medidas.w, h: medidas.h };
+                }
+            } catch (error) {
+                console.warn('No se pudieron leer las dimensiones del logo', error);
+            }
+
             return dataUrl;
         } catch (error) {
             console.warn(`Logo no disponible en ${ruta}`, error);
@@ -67,16 +121,30 @@ async function cargarLogoDataUrl() {
 
 function dibujarLogo(doc, x, y, logoData) {
     if (logoData) {
-        doc.addImage(logoData, 'PNG', x, y, 36, 22);
-        return;
+        // Escala dentro de una caja de 42 x 22 mm conservando la proporción.
+        const ratio = (__logoMedidas.w && __logoMedidas.h)
+            ? __logoMedidas.h / __logoMedidas.w
+            : 22 / 36;
+        const altoMax = 22;
+        const anchoMax = 42;
+        let ancho = altoMax / ratio;
+        let alto = altoMax;
+        if (ancho > anchoMax) {
+            ancho = anchoMax;
+            alto = ancho * ratio;
+        }
+        const yCentrada = y + ((altoMax - alto) / 2);
+        doc.addImage(logoData, 'PNG', x, yCentrada, ancho, alto);
+        return ancho + 8; // separación con el texto del membrete
     }
 
-    doc.setFont('helvetica', 'bold');
+    doc.setFont(PDF_FUENTES.estructura, 'bold');
     doc.setFontSize(16);
     doc.text('García LABORATORIO', x, y + 10);
     doc.setFontSize(9);
-    doc.setFont('helvetica', 'normal');
+    doc.setFont(PDF_FUENTES.estructura, 'normal');
     doc.text('Laboratorio de Análisis Clínicos', x, y + 16);
+    return 48;
 }
 
 function dibujarMembreteGeneral(doc, orden, logoData) {
@@ -89,27 +157,35 @@ function dibujarMembreteGeneral(doc, orden, logoData) {
 
     const logoX = 15;
     const logoY = 10;
-    const logoWidth = 36;
+    const textoX = logoX + dibujarLogo(doc, logoX, logoY, logoData);
+    const textoDerechaX = pageWidth - 15;
 
-    dibujarLogo(doc, logoX, logoY, logoData);
+    // Nombre del laboratorio
+    doc.setFont(PDF_FUENTES.cuerpo, 'bold');
+    doc.setFontSize(PDF_TAMANIOS.nombreLab);
+    doc.setTextColor(PDF_COLORES.azul[0], PDF_COLORES.azul[1], PDF_COLORES.azul[2]);
+    doc.text('Laboratorio de Análisis Clínicos', textoDerechaX, logoY + 11, { align: 'right' });
 
-    const textRightX = pageWidth - 15;
-    const textLeftX = logoX + logoWidth + 8;
+    // Línea de la química responsable
+    doc.setFont(PDF_FUENTES.cuerpo, 'italic');
+    doc.setFontSize(PDF_TAMANIOS.quimico);
+    doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
+    doc.text('Q.F.B. Elia Edith García García  ·  Ced. Prof. 6061749', textoDerechaX, logoY + 17, { align: 'right' });
 
-    doc.setFontSize(14);
-    doc.setFont('helvetica', 'bold');
-    doc.setTextColor(0, 0, 0);
-    doc.text('Laboratorio de Análisis Clínicos', textLeftX, logoY + 10);
+    // Pie de página (contacto)
+    doc.setFont(PDF_FUENTES.cuerpo, 'italic');
+    doc.setFontSize(PDF_TAMANIOS.pie);
+    doc.setTextColor(PDF_COLORES.textoSuave[0], PDF_COLORES.textoSuave[1], PDF_COLORES.textoSuave[2]);
+    doc.text('Av. 5 de Mayo #5 Col. Centro. Teocelo, Ver.', textoDerechaX, pageHeight - 15, { align: 'right' });
+    doc.text('Email: qfbelia_garcia@hotmail.com', textoDerechaX, pageHeight - 9.5, { align: 'right' });
 
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'normal');
-    doc.text('Q.F.B. Elia Edith García García - Ced. Prof. 6061749', textLeftX, logoY + 16);
-
-    doc.setFontSize(9);
-    doc.setFont('helvetica', 'normal');
-    doc.setTextColor(100, 100, 100);
-    doc.text('Av. 5 de Mayo #5 Col. Centro. Teocelo, Ver.', textRightX, pageHeight - 15, { align: 'right' });
-    doc.text('Email: qfbelia_garcia@hotmail.com', textRightX, pageHeight - 10, { align: 'right' });
+    // Regla decorativa doble bajo el membrete
+    doc.setDrawColor(PDF_COLORES.azul[0], PDF_COLORES.azul[1], PDF_COLORES.azul[2]);
+    doc.setLineWidth(0.7);
+    doc.line(15, 32, 195, 32);
+    doc.setDrawColor(PDF_COLORES.grisLinea[0], PDF_COLORES.grisLinea[1], PDF_COLORES.grisLinea[2]);
+    doc.setLineWidth(0.25);
+    doc.line(15, 33.2, 195, 33.2);
 }
 
 const dibujadoresMembrete = {
@@ -119,15 +195,22 @@ const dibujadoresMembrete = {
 function dibujarFirma(doc) {
     const pageWidth = doc.internal.pageSize.width;
     const pageHeight = doc.internal.pageSize.height;
-    const yPosition = pageHeight - 22;
+    const yPosition = pageHeight - 28;
     const centerX = pageWidth / 2;
 
-    doc.setDrawColor(0, 0, 0);
-    doc.line(centerX - 30, yPosition, centerX + 30, yPosition);
+    doc.setDrawColor(PDF_COLORES.grisLinea[0], PDF_COLORES.grisLinea[1], PDF_COLORES.grisLinea[2]);
+    doc.setLineWidth(0.8);
+    doc.line(centerX - 32, yPosition, centerX + 32, yPosition);
 
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'normal');
+    doc.setFont(PDF_FUENTES.cuerpo, 'bold');
+    doc.setFontSize(PDF_TAMANIOS.firma);
+    doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
     doc.text('Q.F.B. Elia Edith García García', centerX, yPosition + 5, { align: 'center' });
+
+    doc.setFont(PDF_FUENTES.cuerpo, 'normal');
+    doc.setFontSize(PDF_TAMANIOS.cedula);
+    doc.setTextColor(PDF_COLORES.textoSuave[0], PDF_COLORES.textoSuave[1], PDF_COLORES.textoSuave[2]);
+    doc.text('Ced. Prof. 6061749', centerX, yPosition + 9.5, { align: 'center' });
 }
 
 function resolverReferenciaTexto(parametro, paciente, edad) {
@@ -144,63 +227,69 @@ function _drawStudyContentOnPage(doc, orden, estudio, logoData) {
     const edadPaciente = typeof window.calcularEdad === 'function' ? window.calcularEdad(paciente.fechaNacimiento) : '';
     const generoPaciente = paciente.sexo === 'M' ? 'Masculino' : paciente.sexo === 'F' ? 'Femenino' : 'N/A';
 
-    let yOffset = 35;
-    doc.line(15, yOffset, 195, yOffset);
-    yOffset += 7;
-
-    doc.setFontSize(11);
-    doc.setFont('helvetica', 'bold');
-    doc.text('Nombre del Paciente:', 15, yOffset);
-    doc.setFont('helvetica', 'normal');
-    doc.text(nombreCompleto, 55, yOffset);
-
-    yOffset += 6;
-
-    doc.setFont('helvetica', 'bold');
-    doc.text('Edad:', 15, yOffset);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${edadPaciente} años`, 30, yOffset);
-
-    doc.setFont('helvetica', 'bold');
-    doc.text('Género:', 70, yOffset);
-    doc.setFont('helvetica', 'normal');
-    doc.text(generoPaciente, 90, yOffset);
-
-    doc.setFont('helvetica', 'bold');
-    doc.text('Fecha:', 130, yOffset);
-    doc.setFont('helvetica', 'normal');
-    doc.text(fechaOrden, 145, yOffset);
-    yOffset += 4;
-
-    doc.line(15, yOffset, 195, yOffset);
-    yOffset += 10;
-
-    doc.setFontSize(14);
-    doc.setFont('helvetica', 'bold');
+    const pageHeight = (doc.internal.pageSize && doc.internal.pageSize.getHeight)
+        ? doc.internal.pageSize.getHeight()
+        : doc.internal.pageSize.height;
     const pageWidth = (doc.internal.pageSize && doc.internal.pageSize.getWidth)
         ? doc.internal.pageSize.getWidth()
         : doc.internal.pageSize.width;
-    doc.text((estudio.nombre || 'Estudio').toUpperCase(), pageWidth / 2, yOffset, { align: 'center' });
-    yOffset += 13;
 
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'bold');
-    doc.setFillColor(230, 230, 230);
-    doc.rect(15, yOffset - 5, 180, 7, 'F');
-    doc.text('PARÁMETRO', 20, yOffset);
-    doc.text('RESULTADO', 80, yOffset);
-    doc.text('VALOR DE REFERENCIA', 135, yOffset);
-    yOffset += 7;
+    let yOffset = 35;
 
+    // ---------- Datos del paciente ----------
+    doc.setFont(PDF_FUENTES.cuerpo, 'bold');
+    doc.setFontSize(PDF_TAMANIOS.pacienteValor);
+    doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
+    doc.text('Paciente:', 15, yOffset);
+    doc.setFont(PDF_FUENTES.cuerpo, 'normal');
+    doc.text(nombreCompleto, 45, yOffset);
+    yOffset += 5.5;
+
+    doc.setFont(PDF_FUENTES.cuerpo, 'bold');
+    doc.text('Edad:', 15, yOffset);
+    doc.setFont(PDF_FUENTES.cuerpo, 'normal');
+    doc.text(`${edadPaciente} años`, 30, yOffset);
+
+    doc.setFont(PDF_FUENTES.cuerpo, 'bold');
+    doc.text('Género:', 70, yOffset);
+    doc.setFont(PDF_FUENTES.cuerpo, 'normal');
+    doc.text(generoPaciente, 90, yOffset);
+
+    doc.setFont(PDF_FUENTES.cuerpo, 'bold');
+    doc.text('Fecha:', 130, yOffset);
+    doc.setFont(PDF_FUENTES.cuerpo, 'normal');
+    doc.text(fechaOrden, 145, yOffset);
+    yOffset += 8;
+
+    // ---------- Título del estudio ----------
+    const tituloEstudio = (estudio.nombre || 'Estudio').toUpperCase();
+    doc.setFont(PDF_FUENTES.cuerpo, 'bold');
+    doc.setFontSize(PDF_TAMANIOS.tituloEstudio);
+    doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
+    doc.text(tituloEstudio, pageWidth / 2, yOffset, { align: 'center' });
+    yOffset += 10;
+
+    // ---------- Tabla de resultados ----------
     const plantilla = obtenerPlantillaEstudio(estudio);
     const edad = typeof window.calcularEdad === 'function' ? Number(window.calcularEdad(paciente.fechaNacimiento)) : 0;
+
+    // Cabecera de columnas
+    doc.setFont(PDF_FUENTES.estructura, 'bold');
+    doc.setFontSize(PDF_TAMANIOS.cabeceraTabla);
+    doc.setFillColor(PDF_COLORES.grisPanel[0], PDF_COLORES.grisPanel[1], PDF_COLORES.grisPanel[2]);
+    doc.rect(15, yOffset - 5, 180, 8, 'F');
+    doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
+    doc.text('PARÁMETRO', 20, yOffset);
+    doc.text('RESULTADO', 85, yOffset, { align: 'center' });
+    doc.text('VALOR DE REFERENCIA', 150, yOffset, { align: 'center' });
+    yOffset += 8;
 
     if (plantilla && plantilla.grupos) {
         plantilla.grupos.forEach((grupo) => {
             const parametros = Array.isArray(grupo.parametros) ? grupo.parametros : [];
-            const espacioNecesario = 7 + (parametros.length * 6) + 2;
+            const espacioNecesario = 8 + (parametros.length * 7) + 3;
 
-            if (yOffset + espacioNecesario > doc.internal.pageSize.height - 40) {
+            if (yOffset + espacioNecesario > pageHeight - 42) {
                 doc.addPage();
                 const tipoMembrete = plantilla.membrete || 'general';
                 const dibujarMembrete = dibujadoresMembrete[tipoMembrete];
@@ -210,11 +299,12 @@ function _drawStudyContentOnPage(doc, orden, estudio, logoData) {
                 yOffset = 35;
             }
 
-            doc.setFont('helvetica', 'bold');
-            doc.setFillColor(23, 105, 194);
-            doc.rect(15, yOffset - 4, 180, 6, 'F');
-            doc.setTextColor(255, 255, 255);
-            doc.text(grupo.nombre, 20, yOffset);
+            // La línea azul de "PARAMETROS" se elimina: las cabeceras y grupos ahora son texto
+            // con títulos diferenciados pero SIN barra de fondo azul (redundante con la cabecera gris)
+            doc.setFont(PDF_FUENTES.estructura, 'bold');
+            doc.setFontSize(PDF_TAMANIOS.grupoTitulo);
+            doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
+            doc.text(String(grupo.nombre || 'Grupo').toUpperCase(), 20, yOffset);
             yOffset += 7;
 
             parametros.forEach((param) => {
@@ -224,12 +314,21 @@ function _drawStudyContentOnPage(doc, orden, estudio, logoData) {
                 const resultadoTexto = res && res.resultado !== undefined ? String(res.resultado) : '';
                 const referenciaTexto = resolverReferenciaTexto(param, paciente, edad);
 
-                doc.setFont('helvetica', 'normal');
-                doc.setTextColor(0, 0, 0);
+                doc.setFont(PDF_FUENTES.cuerpo, 'bold');
+                doc.setFontSize(PDF_TAMANIOS.filaNombre);
+                doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
                 doc.text(String(param.nombre || 'Sin nombre'), 20, yOffset);
+                doc.setFontSize(PDF_TAMANIOS.filaResultado);
                 doc.text(resultadoTexto, 85, yOffset, { align: 'center' });
+                doc.setFont(PDF_FUENTES.cuerpo, 'normal');
+                doc.setFontSize(PDF_TAMANIOS.filaReferencia);
                 doc.text(String(referenciaTexto || ''), 150, yOffset, { align: 'center' });
-                yOffset += 6;
+
+                // Linea guia sutil para que las filas queden derechitas
+                doc.setDrawColor(PDF_COLORES.grisLinea[0], PDF_COLORES.grisLinea[1], PDF_COLORES.grisLinea[2]);
+                doc.setLineWidth(0.15);
+                doc.line(15, yOffset + 3.5, 195, yOffset + 3.5);
+                yOffset += 7;
             });
 
             yOffset += 2;
@@ -238,30 +337,35 @@ function _drawStudyContentOnPage(doc, orden, estudio, logoData) {
         const resultados = Array.isArray(estudio.resultados) ? estudio.resultados : [];
         if (resultados.length) {
             resultados.forEach((resultado) => {
-                if (yOffset + 8 > doc.internal.pageSize.height - 40) {
+                if (yOffset + 9 > pageHeight - 42) {
                     doc.addPage();
                     const dibujarMembrete = dibujadoresMembrete.general;
                     if (typeof dibujarMembrete === 'function') dibujarMembrete(doc, orden, logoData);
                     yOffset = 35;
                 }
 
-                doc.setFont('helvetica', 'normal');
-                doc.setTextColor(0, 0, 0);
+                doc.setFont(PDF_FUENTES.cuerpo, 'bold');
+                doc.setFontSize(PDF_TAMANIOS.filaNombre);
+                doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
                 doc.text(String(resultado.nombre || 'Resultado'), 20, yOffset);
+                doc.setFontSize(PDF_TAMANIOS.filaResultado);
                 doc.text(String(resultado.resultado || ''), 85, yOffset, { align: 'center' });
+                doc.setFont(PDF_FUENTES.cuerpo, 'normal');
+                doc.setFontSize(PDF_TAMANIOS.filaReferencia);
                 doc.text(String(resultado.referencia || ''), 150, yOffset, { align: 'center' });
-                yOffset += 6;
+
+                doc.setDrawColor(PDF_COLORES.grisLinea[0], PDF_COLORES.grisLinea[1], PDF_COLORES.grisLinea[2]);
+                doc.setLineWidth(0.15);
+                doc.line(15, yOffset + 3.5, 195, yOffset + 3.5);
+                yOffset += 7;
             });
         }
     }
 
     if (estudio.observaciones) {
-        const pageHeight = (doc.internal.pageSize && doc.internal.pageSize.getHeight)
-            ? doc.internal.pageSize.getHeight()
-            : doc.internal.pageSize.height;
-        const espacioReservadoFirma = 38;
+        const espacioReservadoFirma = 40;
         const observacionesSplit = doc.splitTextToSize(estudio.observaciones, 170);
-        const alturaObservaciones = (observacionesSplit.length * 5) + 10;
+        const alturaObservaciones = (observacionesSplit.length * 5.3) + 12;
 
         if (yOffset + alturaObservaciones > pageHeight - espacioReservadoFirma) {
             doc.addPage();
@@ -273,11 +377,13 @@ function _drawStudyContentOnPage(doc, orden, estudio, logoData) {
             yOffset = 35;
         }
 
-        yOffset += 8;
-        doc.setFont('helvetica', 'bold');
-        doc.setTextColor(0, 0, 0);
+        yOffset += 9;
+        doc.setFont(PDF_FUENTES.cuerpo, 'bold');
+        doc.setFontSize(PDF_TAMANIOS.observaciones);
+        doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
         doc.text('OBSERVACIONES:', 15, yOffset);
-        doc.setFont('helvetica', 'normal');
+        doc.setFont(PDF_FUENTES.cuerpo, 'normal');
+        doc.setTextColor(PDF_COLORES.texto[0], PDF_COLORES.texto[1], PDF_COLORES.texto[2]);
         doc.text(observacionesSplit, 15, yOffset + 5);
     }
 
