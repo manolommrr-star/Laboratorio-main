@@ -234,7 +234,7 @@ function _drawStudyContentOnPage(doc, orden, estudio, logoData) {
         ? doc.internal.pageSize.getWidth()
         : doc.internal.pageSize.width;
 
-    let yOffset = 35;
+    let yOffset = 42;
 
     // ---------- Datos del paciente ----------
     doc.setFont(PDF_FUENTES.cuerpo, 'bold');
@@ -296,7 +296,7 @@ function _drawStudyContentOnPage(doc, orden, estudio, logoData) {
                 if (typeof dibujarMembrete === 'function') {
                     dibujarMembrete(doc, orden, logoData);
                 }
-                yOffset = 35;
+                yOffset = 42;
             }
 
             // Los grupos llamados "PARÁMETROS" (los que crea el editor) repiten la
@@ -349,7 +349,7 @@ function _drawStudyContentOnPage(doc, orden, estudio, logoData) {
                     doc.addPage();
                     const dibujarMembrete = dibujadoresMembrete.general;
                     if (typeof dibujarMembrete === 'function') dibujarMembrete(doc, orden, logoData);
-                    yOffset = 35;
+                    yOffset = 42;
                 }
 
                 doc.setFont(PDF_FUENTES.cuerpo, 'bold');
@@ -382,7 +382,7 @@ function _drawStudyContentOnPage(doc, orden, estudio, logoData) {
             if (typeof dibujarMembrete === 'function') {
                 dibujarMembrete(doc, orden, logoData);
             }
-            yOffset = 35;
+            yOffset = 42;
         }
 
         yOffset += 9;
